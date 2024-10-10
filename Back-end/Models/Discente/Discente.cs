@@ -2,7 +2,10 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Back_end.Models
-{
+{   
+    /// <summary>
+    /// Representação da tabela Discente no banco de dados em model
+    /// </summary>
     [Table("discente")]
     public class Discente
     {
@@ -35,12 +38,17 @@ namespace Back_end.Models
         public int Matricula { get; set; }
 
         [Required]
+        [Column("telefone", TypeName = "INT")] // Mapeia a coluna 'telefone'
+        public int Telefone { get; set; }
+
+        [Required]
         [StringLength(14)]
-        [Column("telefone")] // Mapeia a coluna 'telefone'
-        public string Telefone { get; set; }
+        [Column("cpf")] // Mapeia a coluna 'cpf'
+        public string Cpf { get; set; }
 
         [StringLength(100)]
         [Column("curso")] // Mapeia a coluna 'curso'
         public string Curso { get; set; }
     }
 }
+
